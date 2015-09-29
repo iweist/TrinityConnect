@@ -7,10 +7,12 @@ public class Question {
 
     private int mTextResId;
     private boolean mAnswerTrue;
+    private boolean mHasCheated;
 
     public Question(int textResId, boolean answerTrue) {
         mTextResId = textResId;
         mAnswerTrue = answerTrue;
+
     }
 
     public int getTextResId() {
@@ -23,6 +25,14 @@ public class Question {
 
     public boolean isAnswerTrue() {
         return mAnswerTrue;
+    }
+
+    public boolean isHasCheated(){
+        return mHasCheated;
+    }
+
+    public void setHasCheated(boolean value){
+        mHasCheated = value;
     }
 
     public void setAnswerTrue(boolean answerTrue) {
