@@ -43,8 +43,6 @@ public class QuizActivity extends AppCompatActivity {
     };
     private boolean mCheatingArray[] = {false, false, false,};
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +50,7 @@ public class QuizActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz);
 
         int versionCode = BuildConfig.VERSION_CODE;
-        versionName = Build.VERSION.RELEASE;
+
 
 
         mAndroidVersion = (TextView) findViewById(R.id.current_version_view);
@@ -85,6 +83,8 @@ public class QuizActivity extends AppCompatActivity {
         });
 
         mAndroidVersion = (TextView) findViewById(R.id.current_version_view);
+
+        versionName = Build.VERSION.RELEASE;
         mAndroidVersion.setText("API " + versionName);
 
         mNextButton = (ImageButton) findViewById(R.id.next_button);
