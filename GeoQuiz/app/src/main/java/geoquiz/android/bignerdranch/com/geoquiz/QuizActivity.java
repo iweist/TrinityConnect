@@ -2,6 +2,7 @@ package geoquiz.android.bignerdranch.com.geoquiz;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +24,7 @@ public class QuizActivity extends AppCompatActivity {
 
     private int mCurrentIndex = 0;
     private boolean mIsCheater;
+    String versionName;
 
     private Button mTrueButton;
     private Button mFalseButton;
@@ -32,6 +34,8 @@ public class QuizActivity extends AppCompatActivity {
     private ImageButton mPreviousButton;
 
     private TextView mQuestionTextView;
+    private TextView mAndroidVersion;
+
     private Question[] mQuestionBank = new Question[]{
             new Question(R.string.question_pika, false),
             new Question(R.string.question_pocket, true),
@@ -47,7 +51,11 @@ public class QuizActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate(Bundle) called");
         setContentView(R.layout.activity_quiz);
 
-        mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
+        int versionCode = BuildConfig.VERSION_CODE;
+        versionName = Build.VERSION.RELEASE;
+
+
+        mAndroidVersion = (TextView) findViewById(R.id.current_version_view);
 
         mTrueButton = (Button)findViewById(R.id.true_button);
         mTrueButton.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +73,7 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
+        mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
         mQuestionTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +83,9 @@ public class QuizActivity extends AppCompatActivity {
                 Toast.makeText(QuizActivity.this, messageResId, Toast.LENGTH_SHORT) .show();
             }
         });
+
+        mAndroidVersion = (TextView) findViewById(R.id.current_version_view);
+        mAndroidVersion.setText("API " + versionName);
 
         mNextButton = (ImageButton) findViewById(R.id.next_button);
         mNextButton.setOnClickListener(new View.OnClickListener() {
