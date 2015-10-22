@@ -35,7 +35,8 @@ public class DatePickerFragment extends DialogFragment {
         return fragment;
     }
 
-    @Override public Dialog onCreateDialog(Bundle savedInstanceState) {
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         Date date = (Date) getArguments().getSerializable(ARG_DATE);
 

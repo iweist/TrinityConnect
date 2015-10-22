@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,6 +61,7 @@ public class CrimeListFragment extends Fragment {
 
         private TextView mTitleTextView;
         private TextView mDateTextView;
+        private TextView mTimeTextView;
         private CheckBox mSolvedCheckBox;
         private Crime mCrime;
 
@@ -71,6 +73,8 @@ public class CrimeListFragment extends Fragment {
                     itemView.findViewById(R.id.list_item_crime_title_text_view);
             mDateTextView = (TextView)
                     itemView.findViewById(R.id.list_item_crime_date_text_view);
+            mTimeTextView = (TextView)
+                    itemView.findViewById(R.id.list_item_crime_time_text_view);
             mSolvedCheckBox = (CheckBox)
                     itemView.findViewById(R.id.list_item_crime_solved_check_box);
         }
@@ -79,6 +83,7 @@ public class CrimeListFragment extends Fragment {
             mCrime = crime;
             mTitleTextView.setText(mCrime.getTitle());
             mDateTextView.setText(mCrime.getDate().toString());
+            mTimeTextView.setText(DateFormat.format("hh:mm", mCrime.getTime()));
             mSolvedCheckBox.setChecked(mCrime.isSolved());
         }
 
