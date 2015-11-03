@@ -72,7 +72,7 @@ public class CrimeLab {
             cursor.moveToFirst();
             return cursor.getCrime();
         } finally { cursor.close(); }
-            
+
     }
 
     public void updateCrime(Crime crime) {
