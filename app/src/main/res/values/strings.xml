@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TrinityConnect</string>
+
+    <string name="new_event">New Event</string>
+    <string name="my_events">My Events</string>
+    <string name="action_settings">Settings</string>
+</resources>
