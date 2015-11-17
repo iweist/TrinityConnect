@@ -62,10 +62,12 @@ public class EventListFragment extends Fragment {
         }
 
 
-        public void bindCrime(Event crime){
-            mEvent = crime;
+        public void bindEvent(Event event){
+            mEvent = event;
             mTitleTextView.setText(mEvent.getTitle());
             mDateTextView.setText("DATE:" + DateFormat.format("dd/MM/yyyy", mEvent.getDate()));
+            mEvent = event;
+            mTitleTextView.setText(mEvent.getTitle());
             mTimeTextView.setText("TIME:" + DateFormat.format("hh:mm", mEvent.getTime()));
 
         }
@@ -89,9 +91,9 @@ public class EventListFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(EventHolder holder, int position){
-            Event crime = mEvents.get(position);
+            Event event = mEvents.get(position);
 
-            holder.bindCrime(crime);
+            holder.bindEvent(event);
         }
 
         @Override
@@ -162,13 +164,7 @@ public class EventListFragment extends Fragment {
             mAdapter.notifyItemChanged(index);
 
         }
-        /*tried to make sure the view got updated if a crime was deleted
-        the crime is deleted by the application, however i couldn't quite figure out how to refresh
-        the main activity after calling getActivity.finish() in the fragment
-        you can see that the crimes are actually deleted by giving each a specific name and
-        then creating a new crime after deleting one, after which you will see that the crime has
-        actually been deleted from the array list of crimes
-        */
+
 
 
         if(delChange == null)

@@ -1,5 +1,6 @@
 package trinityconnect.android.bignerdranch.com.trinityconnect;
 
+import java.sql.Time;
 import java.util.Date;
 import java.util.UUID;
 
@@ -22,6 +23,7 @@ public class Event {
     public Event(UUID id) {
         mId = id;
         mDate = new Date();
+        mTime = new Date();
     }
 
     public UUID getId() {

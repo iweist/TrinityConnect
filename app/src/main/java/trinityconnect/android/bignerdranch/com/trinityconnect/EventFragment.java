@@ -32,8 +32,6 @@ public class EventFragment extends Fragment {
     private Button mDateButton;
     private Button mTimeButton;
     private Button mDeleteButton;
-    private CheckBox mSolvedCheckBox;
-    private Button mReportButton;
 
 
     public static EventFragment newInstance(UUID eventId) {
@@ -67,7 +65,7 @@ public class EventFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_event_list, container, false);
+        View v = inflater.inflate(R.layout.fragment_event, container, false);
         mTitleField = (EditText) v.findViewById(R.id.event_title);
         mTitleField.setText(mEvent.getTitle());
         mTitleField.addTextChangedListener(new TextWatcher() {
