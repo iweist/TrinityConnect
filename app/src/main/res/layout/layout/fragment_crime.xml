@@ -5,30 +5,33 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <include layout="@layout/view_camera_and_title"></include>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/event_title_label"
+        android:text="@string/crime_title_label"
         style="?android:listSeparatorTextViewStyle"
         />
 
     <EditText
-        android:id="@+id/event_title"
+        android:id="@+id/crime_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="@string/crime_title_hint"
         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/event_details_label"
+        android:text="@string/crime_details_label"
         style="?android:listSeparatorTextViewStyle"
         />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/event_date"
+        android:id="@+id/crime_date"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         />
@@ -36,17 +39,43 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/event_time"
+        android:id="@+id/crime_time"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
+        />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/crime_solved"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/crime_solved_label"
         />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/delete_event"
+        android:id="@+id/delete_crime"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:text="Delete Event"/>
+        android:text="Delete Crime"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/crime_suspect"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/crime_suspect_text"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/crime_report"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/crime_report_text"/>
+
 
 </LinearLayout>
