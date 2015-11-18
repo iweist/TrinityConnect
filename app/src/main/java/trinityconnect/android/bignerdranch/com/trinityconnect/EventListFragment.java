@@ -67,10 +67,10 @@ public class EventListFragment extends Fragment {
             mEvent = event;
             mTitleTextView.setText(mEvent.getTitle());
             mDescriptTextView.setText(mEvent.getDescription());
-            mDateTextView.setText("DATE:" + DateFormat.format("dd/MM/yyyy", mEvent.getDate()));
+            mDateTextView.setText("Date: " + DateFormat.format("dd/MM/yyyy", mEvent.getDate()));
             mEvent = event;
             mTitleTextView.setText(mEvent.getTitle());
-            mTimeTextView.setText("TIME:" + DateFormat.format("hh:mm", mEvent.getTime()));
+            mTimeTextView.setText("Time: " + DateFormat.format("hh:mm", mEvent.getTime()));
 
         }
 
