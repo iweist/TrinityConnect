@@ -13,6 +13,14 @@
         tools:text="Event Title"/>
 
     <TextView
+        android:id="@+id/list_item_event_descript_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:padding="4dp"
+        tools:text="Event Description"/>
+
+    <TextView
         android:id="@+id/list_item_event_date_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

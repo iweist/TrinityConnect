@@ -19,6 +19,7 @@ public class EventBaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db){
         db.execSQL("create table " + EventDbSchema.EventTable.NAME + "(" + "_id integer primary key autoincrement, " + EventDbSchema.EventTable.Cols.UUID+ ", " +
                         EventDbSchema.EventTable.Cols.TITLE + ", " +
+                        EventDbSchema.EventTable.Cols.DESCRIPT + ", " +
                         EventDbSchema.EventTable.Cols.DATE + ") "
         );
     }

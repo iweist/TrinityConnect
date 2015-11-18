@@ -36,9 +36,9 @@ public class EventListFragment extends Fragment {
 
     private class EventHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView mTitleTextView;
+        private TextView mDescriptTextView;
         private TextView mDateTextView;
         private TextView mTimeTextView;
-        private CheckBox mSolvedCheckBox;
         private Event mEvent;
         private static final int REQUEST_EVENT = 1;
 
@@ -48,6 +48,7 @@ public class EventListFragment extends Fragment {
             itemView.setOnClickListener(this);
 
             mTitleTextView = (TextView) itemView.findViewById(R.id.list_item_event_title_text_view);
+            mDescriptTextView = (TextView) itemView.findViewById(R.id.list_item_event_descript_text_view);
             mDateTextView = (TextView) itemView.findViewById(R.id.list_item_event_date_text_view);
             mTimeTextView = (TextView) itemView.findViewById(R.id.list_item_event_time_text_view);
 
@@ -65,6 +66,7 @@ public class EventListFragment extends Fragment {
         public void bindEvent(Event event){
             mEvent = event;
             mTitleTextView.setText(mEvent.getTitle());
+            mDescriptTextView.setText(mEvent.getDescription());
             mDateTextView.setText("DATE:" + DateFormat.format("dd/MM/yyyy", mEvent.getDate()));
             mEvent = event;
             mTitleTextView.setText(mEvent.getTitle());

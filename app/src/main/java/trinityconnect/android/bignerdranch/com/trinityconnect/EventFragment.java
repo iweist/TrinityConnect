@@ -29,9 +29,11 @@ public class EventFragment extends Fragment {
     private static final int REQUEST_TIME = 1;
     private Event mEvent;
     private EditText mTitleField;
+    private EditText mDescriptionField;
     private Button mDateButton;
     private Button mTimeButton;
     private Button mDeleteButton;
+    private Button mCompleteButton;
 
 
     public static EventFragment newInstance(UUID eventId) {
@@ -66,6 +68,8 @@ public class EventFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_event, container, false);
+
+
         mTitleField = (EditText) v.findViewById(R.id.event_title);
         mTitleField.setText(mEvent.getTitle());
         mTitleField.addTextChangedListener(new TextWatcher() {
@@ -84,6 +88,27 @@ public class EventFragment extends Fragment {
                 //this one too
             }
         });
+
+        mDescriptionField = (EditText) v.findViewById(R.id.event_description);
+        mDescriptionField.setText(mEvent.getDescription());
+        mDescriptionField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //intentional blank
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mEvent.setDescription(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                //this one too
+            }
+        });
+
+
         mDateButton = (Button) v.findViewById(R.id.event_date);
         updateDate();
         mDateButton.setOnClickListener(new View.OnClickListener() {
@@ -96,6 +121,7 @@ public class EventFragment extends Fragment {
 
             }
         });
+
 
         mTimeButton = (Button) v.findViewById(R.id.event_time);
         updateTime();
@@ -110,6 +136,16 @@ public class EventFragment extends Fragment {
             }
         });
 
+        mCompleteButton = (Button) v.findViewById(R.id.complete_event);
+        mCompleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+
+        });
+
+        /*
         mDeleteButton = (Button) v.findViewById(R.id.delete_event);
         mDeleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,6 +154,7 @@ public class EventFragment extends Fragment {
             }
 
         });
+        */
 
         return v;
     }

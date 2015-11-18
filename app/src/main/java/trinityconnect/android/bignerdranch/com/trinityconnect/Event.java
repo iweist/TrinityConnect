@@ -11,6 +11,7 @@ public class Event {
 
     private UUID mId;
     private String mTitle;
+    private String mDescription;
     private Date mDate;
     private Date mTime;
 
@@ -36,6 +37,14 @@ public class Event {
 
     public void setTitle(String title) {
         mTitle = title;
+    }
+
+    public String getDescription() {
+        return mDescription;
+    }
+
+    public void setDescription(String description) {
+        mDescription = description;
     }
 
     public Date getDate() {

@@ -21,7 +21,20 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/event_details_label"
+        android:text="@string/event_description_label"
+        style="?android:listSeparatorTextViewStyle"
+        />
+
+    <EditText
+        android:id="@+id/event_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/event_date_label"
         style="?android:listSeparatorTextViewStyle"
         />
 
@@ -33,6 +46,13 @@
         android:layout_marginRight="16dp"
         />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/event_time_label"
+        style="?android:listSeparatorTextViewStyle"
+        />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,12 +61,15 @@
         android:layout_marginRight="16dp"
         />
 
+
     <Button
+        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/delete_event"
+        android:id="@+id/complete_event"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:text="Delete Event"/>
+        android:text="Complete Event"/>
+
 
 </LinearLayout>

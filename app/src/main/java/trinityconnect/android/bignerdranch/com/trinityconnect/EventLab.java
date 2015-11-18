@@ -85,6 +85,7 @@ public class EventLab {
         ContentValues values = new ContentValues();
         values.put(EventDbSchema.EventTable.Cols.UUID, event.getId().toString());
         values.put(EventDbSchema.EventTable.Cols.TITLE, event.getTitle());
+        values.put(EventDbSchema.EventTable.Cols.DESCRIPT, event.getDescription());
         values.put(EventDbSchema.EventTable.Cols.DATE, event.getDate().getTime());
 
         return values;
