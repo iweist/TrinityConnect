@@ -31,6 +31,7 @@ public class EventFragment extends Fragment {
     private Event mEvent;
     private EditText mTitleField;
     private EditText mDescriptionField;
+    private EditText mLocationField;
     private Button mDateButton;
     private Button mTimeButton;
     private Button mCompleteButton;
@@ -100,6 +101,25 @@ public class EventFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 mEvent.setDescription(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                //this one too
+            }
+        });
+
+        mLocationField = (EditText) v.findViewById(R.id.event_location);
+        mLocationField.setText(mEvent.getLocation());
+        mLocationField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //intentional blank
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mEvent.setLocation(s.toString());
             }
 
             @Override

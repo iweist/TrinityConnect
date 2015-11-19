@@ -10,7 +10,7 @@
     <item
         android:id="@+id/menu_item_my_events"
         android:icon="@drawable/ic_menu_events"
-        android:title="@string/my_events"
+        android:title="@string/map"
         app:showAsAction="ifRoom|withText"/>
 
 </menu>

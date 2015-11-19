@@ -20,11 +20,13 @@ public class EventCursorWrapper extends CursorWrapper {
         String uuidString = getString(getColumnIndex(EventDbSchema.EventTable.Cols.UUID));
         String title = getString(getColumnIndex(EventDbSchema.EventTable.Cols.TITLE));
         String descript = getString(getColumnIndex(EventDbSchema.EventTable.Cols.DESCRIPT));
+        String location = getString(getColumnIndex(EventDbSchema.EventTable.Cols.LOCATION));
         long date = getLong(getColumnIndex(EventDbSchema.EventTable.Cols.DATE));
 
         Event event = new Event(UUID.fromString(uuidString));
         event.setTitle(title);
         event.setDescription(descript);
+        event.setLocation(location);
         event.setDate(new Date(date));
 
         return event;

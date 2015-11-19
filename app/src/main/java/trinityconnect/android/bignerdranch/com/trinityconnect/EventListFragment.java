@@ -37,6 +37,7 @@ public class EventListFragment extends Fragment {
     private class EventHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView mTitleTextView;
         private TextView mDescriptTextView;
+        private TextView mLocationTextView;
         private TextView mDateTextView;
         private TextView mTimeTextView;
         private Event mEvent;
@@ -49,6 +50,7 @@ public class EventListFragment extends Fragment {
 
             mTitleTextView = (TextView) itemView.findViewById(R.id.list_item_event_title_text_view);
             mDescriptTextView = (TextView) itemView.findViewById(R.id.list_item_event_descript_text_view);
+            mLocationTextView = (TextView) itemView.findViewById(R.id.list_item_event_location_text_view);
             mDateTextView = (TextView) itemView.findViewById(R.id.list_item_event_date_text_view);
             mTimeTextView = (TextView) itemView.findViewById(R.id.list_item_event_time_text_view);
 
@@ -67,6 +69,7 @@ public class EventListFragment extends Fragment {
             mEvent = event;
             mTitleTextView.setText(mEvent.getTitle());
             mDescriptTextView.setText(mEvent.getDescription());
+            mLocationTextView.setText(mEvent.getLocation());
             mDateTextView.setText("Date: " + DateFormat.format("dd/MM/yyyy", mEvent.getDate()));
             mEvent = event;
             mTitleTextView.setText(mEvent.getTitle());

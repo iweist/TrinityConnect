@@ -34,21 +34,13 @@ public class Event {
     }
 
     public String getTitle() { return mTitle; }
-    public void setTitle(String title) {
-        mTitle = title;
-    }
+    public void setTitle(String title) { mTitle = title; }
 
     public String getDescription() { return mDescription; }
-    public void setDescription(String description) {
-        mDescription = description;
-    }
+    public void setDescription(String description) { mDescription = description; }
 
-    public String getLocation() {
-        return mLocation;
-    }
-    public void setTime(String location) {
-        mLocation = location;
-    }
+    public String getLocation() { return mLocation; }
+    public void setLocation(String location) { mLocation = location; }
 
     public Date getDate() {
         return mDate;
