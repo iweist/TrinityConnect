@@ -12,8 +12,10 @@ public class Event {
     private UUID mId;
     private String mTitle;
     private String mDescription;
+    private String mLocation;
     private Date mDate;
     private Date mTime;
+    private int mRSVP;
 
 
     public Event() {
@@ -31,26 +33,26 @@ public class Event {
         return mId;
     }
 
-    public String getTitle() {
-        return mTitle;
-    }
-
+    public String getTitle() { return mTitle; }
     public void setTitle(String title) {
         mTitle = title;
     }
 
-    public String getDescription() {
-        return mDescription;
-    }
-
+    public String getDescription() { return mDescription; }
     public void setDescription(String description) {
         mDescription = description;
+    }
+
+    public String getLocation() {
+        return mLocation;
+    }
+    public void setTime(String location) {
+        mLocation = location;
     }
 
     public Date getDate() {
         return mDate;
     }
-
     public void setDate(Date date) {
         mDate = date;
     }
@@ -58,10 +60,14 @@ public class Event {
     public Date getTime() {
         return mTime;
     }
-
     public void setTime(Date time) {
         mTime = time;
     }
+
+    public int getRSVP() {
+        return mRSVP;
+    }
+    public void incrementRSVP(int num) { mRSVP +=1; }
 
 }
 

@@ -34,6 +34,19 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/event_location_label"
+        style="?android:listSeparatorTextViewStyle"
+        />
+
+    <EditText
+        android:id="@+id/event_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/event_date_label"
         style="?android:listSeparatorTextViewStyle"
         />
@@ -70,6 +83,13 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:text="Complete Event"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/event_rsvp"
+        style="?android:listSeparatorTextViewStyle"
+        />
 
 
 </LinearLayout>

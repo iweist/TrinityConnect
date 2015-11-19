@@ -168,7 +168,6 @@ public class EventListFragment extends Fragment {
         }
 
 
-
         if(delChange == null)
             mAdapter.notifyDataSetChanged();
 
@@ -191,7 +190,8 @@ public class EventListFragment extends Fragment {
                 startActivity(intent);
                 return true;
             case R.id.menu_item_my_events:
-
+                Intent intent1 = MapsActivity.newIntent(getActivity());
+                startActivity(intent1);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

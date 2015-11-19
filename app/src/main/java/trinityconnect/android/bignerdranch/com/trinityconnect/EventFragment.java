@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.Date;
 import java.util.UUID;
@@ -32,7 +33,6 @@ public class EventFragment extends Fragment {
     private EditText mDescriptionField;
     private Button mDateButton;
     private Button mTimeButton;
-    private Button mDeleteButton;
     private Button mCompleteButton;
 
 
@@ -135,6 +135,8 @@ public class EventFragment extends Fragment {
 
             }
         });
+
+
 
         mCompleteButton = (Button) v.findViewById(R.id.complete_event);
         mCompleteButton.setOnClickListener(new View.OnClickListener() {
