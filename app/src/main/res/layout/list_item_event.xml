@@ -21,7 +21,9 @@
         tools:text="Description "/>
 
     <TextView
-        android:id="@+id/list_item_event_location_text_view"
+
+        android:id="@+id/list_item_event_loc_text_view"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/list_item_event_descript_text_view"
@@ -32,7 +34,7 @@
         android:id="@+id/list_item_event_date_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/list_item_event_location_text_view"
+        android:layout_below="@+id/list_item_event_loc_text_view"
         android:padding="4dp"
         tools:text="Date "/>
 

@@ -15,4 +15,12 @@
     <string name="time_picker_title">Time of event:</string>
     <string name="event_title_hint">Enter a title for the event.</string>
     <string name="title_activity_maps">Map</string>
+
+    <string-array name="loc_array">
+        <item>Mather</item>
+        <item>Raether Library</item>
+        <item>Main Quad</item>
+        <item>Chapel</item>
+        <item>Vernon Social</item>
+    </string-array>
 </resources>

@@ -12,7 +12,7 @@ public class EventDbSchema {
             public static final String UUID = "uuid";
             public static final String TITLE = "title";
             public static final String DESCRIPT = "descript";
-            public static final String LOCATION = "location";
+            public static final String LOC = "location";
             public static final String DATE = "date";
 
         }

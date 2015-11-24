@@ -8,16 +8,21 @@ import android.support.v4.app.FragmentManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.Date;
 import java.util.UUID;
+
 
 /**
  * Created by owner on 11/15/2015.
@@ -109,22 +114,47 @@ public class EventFragment extends Fragment {
             }
         });
 
-        mLocationField = (EditText) v.findViewById(R.id.event_location);
-        mLocationField.setText(mEvent.getLocation());
-        mLocationField.addTextChangedListener(new TextWatcher() {
+        Spinner staticSpinner = (Spinner) v.findViewById(R.id.static_spinner);
+
+        // Create an ArrayAdapter using the string array and a default spinner
+        ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter
+                .createFromResource(this.getActivity(), R.array.loc_array,
+                        android.R.layout.simple_spinner_item);
+
+        // Specify the layout to use when the list of choices appears
+        staticAdapter
+                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // Apply the adapter to the spinner
+        staticSpinner.setAdapter(staticAdapter);
+
+        staticSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                //intentional blank
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                switch (position) {
+                    case 0:
+                        mEvent.setLoc("Mather");
+                        break;
+                    case 1:
+                        mEvent.setLoc("Raether Library");
+                        break;
+                    case 2:
+                        mEvent.setLoc("Main Quad");
+                        break;
+                    case 3:
+                        mEvent.setLoc("Chapel");
+                        break;
+                    case 4:
+                        mEvent.setLoc("Vernon Social");
+                        break;
+
+                }
             }
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mEvent.setLocation(s.toString());
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                //this one too
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
             }
         });
 

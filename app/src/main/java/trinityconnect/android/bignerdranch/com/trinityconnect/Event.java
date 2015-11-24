@@ -12,7 +12,7 @@ public class Event {
     private UUID mId;
     private String mTitle;
     private String mDescription;
-    private String mLocation;
+    private String mLoc;
     private Date mDate;
     private Date mTime;
     private int mRSVP;
@@ -39,9 +39,6 @@ public class Event {
     public String getDescription() { return mDescription; }
     public void setDescription(String description) { mDescription = description; }
 
-    public String getLocation() { return mLocation; }
-    public void setLocation(String location) { mLocation = location; }
-
     public Date getDate() {
         return mDate;
     }
@@ -60,6 +57,9 @@ public class Event {
         return mRSVP;
     }
     public void incrementRSVP(int num) { mRSVP +=1; }
+
+    public String getLoc() { return mLoc; }
+    public void setLoc(String loc) { mLoc = loc; }
 
 }
 
