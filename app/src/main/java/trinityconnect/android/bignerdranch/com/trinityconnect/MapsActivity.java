@@ -73,6 +73,46 @@ public class MapsActivity extends FragmentActivity {
     private void setUpMap() {
         LatLng mLatLng = new LatLng(41.747368, -72.690357);
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(mLatLng, 17));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.747368, -72.690357)).title("Trinity College"));
+
+        //Sports Fields
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.749661, -72.689377)).title("Miller Field"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.749651, -72.688036)).title("Sheppard Field"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.748114, -72.689452)).title("Baseball Field"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.749252, -72.690447)).title("Lacrosse/Soccer Field"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.746841, -72.688731)).title("Ferris"));
+
+        //North part of campus
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.748309, -72.691884)).title("Main Quad"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.749221, -72.691801)).title("Chapel"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.751301, -72.691597)).title("Vernon Social"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.751354, -72.690701)).title("North"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.750694, -72.690744)).title("Hamlin"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.750384, -72.691233)).title("The Bistro"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.750919, -72.689447)).title("Psi Upsilon"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.751338, -72.692193)).title("AD"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.751751, -72.692790)).title("The Hall"));
+
+        //Middle part of campus
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745920, -72.692439)).title("Elton"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.746041, -72.691953)).title("Jones"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.746652, -72.692580)).title("Mather"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.747277, -72.690873)).title("Raether Library"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745946, -72.691441)).title("McCook"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.746600, -72.690635)).title("Austin Arts"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.747334, -72.691777)).title("Cinestudio"));
+
+        //South part of campus
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.743288, -72.691475)).title("Trinity Commons"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.744059, -72.691511)).title("Summit East"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.744004, -72.691898)).title("Summit South"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.744384, -72.691993)).title("Summit North"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745065, -72.691094)).title("LSC Quad"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.744430, -72.691063)).title("MECC"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745117, -72.690513)).title("LSC"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.744741, -72.691968)).title("Funston"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745055, -72.691945)).title("Smith"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745355, -72.692274)).title("Wheaton"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745406, -72.691939)).title("Jackson"));
+
     }
 }
