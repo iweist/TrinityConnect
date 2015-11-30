@@ -134,18 +134,93 @@ public class EventFragment extends Fragment {
                                        int position, long id) {
                 switch (position) {
                     case 0:
-                        mEvent.setLoc("Mather");
+                        mEvent.setLoc("AD");
                         break;
                     case 1:
-                        mEvent.setLoc("Raether Library");
+                        mEvent.setLoc("Austin Arts");
                         break;
                     case 2:
-                        mEvent.setLoc("Main Quad");
+                        mEvent.setLoc("Baseball Field");
                         break;
                     case 3:
-                        mEvent.setLoc("Chapel");
+                        mEvent.setLoc("The Bistro");
                         break;
                     case 4:
+                        mEvent.setLoc("Chapel");
+                        break;
+                    case 5:
+                        mEvent.setLoc("Cinestudio");
+                        break;
+                    case 6:
+                        mEvent.setLoc("Elton");
+                        break;
+                    case 7:
+                        mEvent.setLoc("Ferris");
+                        break;
+                    case 8:
+                        mEvent.setLoc("Funston");
+                        break;
+                    case 9:
+                        mEvent.setLoc("The Hall");
+                        break;
+                    case 10:
+                        mEvent.setLoc("Hamlin");
+                        break;
+                    case 11:
+                        mEvent.setLoc("Jackson");
+                        break;
+                    case 12:
+                        mEvent.setLoc("Jones");
+                        break;
+                    case 13:
+                        mEvent.setLoc("Lacrosse Field");
+                        break;
+                    case 14:
+                        mEvent.setLoc("LSC");
+                        break;
+                    case 15:
+                        mEvent.setLoc("LSC Quad");
+                        break;
+                    case 16:
+                        mEvent.setLoc("Main Quad");
+                        break;
+                    case 17:
+                        mEvent.setLoc("Mather");
+                        break;
+                    case 18:
+                        mEvent.setLoc("McCook");
+                        break;
+                    case 19:
+                        mEvent.setLoc("MECC");
+                        break;
+                    case 20:
+                        mEvent.setLoc("Miller Field");
+                        break;
+                    case 21:
+                        mEvent.setLoc("North");
+                        break;
+                    case 22:
+                        mEvent.setLoc("Psi Upsilon");
+                        break;
+                    case 23:
+                        mEvent.setLoc("Raether Library");
+                        break;
+                    case 24:
+                        mEvent.setLoc("Sheppard Field");
+                        break;
+                    case 25:
+                        mEvent.setLoc("Smith");
+                        break;
+                    case 26:
+                        mEvent.setLoc("Summit East");
+                        break;
+                    case 27:
+                        mEvent.setLoc("Summit North");
+                        break;
+                    case 28:
+                        mEvent.setLoc("Summit South");
+                        break;
+                    case 29:
                         mEvent.setLoc("Vernon Social");
                         break;
 

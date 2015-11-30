@@ -17,10 +17,36 @@
     <string name="title_activity_maps">Map</string>
 
     <string-array name="loc_array">
-        <item>Mather</item>
-        <item>Raether Library</item>
-        <item>Main Quad</item>
+        <item>AD</item>
+        <item>Austin Arts</item>
+        <item>Baseball Field</item>
+        <item>The Bistro</item>
         <item>Chapel</item>
+        <item>Cinestudio</item>
+        <item>Elton</item>
+        <item>Ferris</item>
+        <item>Funston</item>
+        <item>The Hall</item>
+        <item>Hamlin</item>
+        <item>Jackson</item>
+        <item>Jones</item>
+        <item>Lacrosse Field</item>
+        <item>LSC</item>
+        <item>LSC Quad</item>
+        <item>Main Quad</item>
+        <item>Mather</item>
+        <item>McCook</item>
+        <item>MECC</item>
+        <item>Miller Field</item>
+        <item>North</item>
+        <item>Psi Upsilon</item>
+        <item>Raether Library</item>
+        <item>Sheppard Field</item>
+        <item>Smith</item>
+        <item>Summit East</item>
+        <item>Summit North</item>
+        <item>Summit South</item>
+        <item>Trinity Commons</item>
         <item>Vernon Social</item>
     </string-array>
 </resources>

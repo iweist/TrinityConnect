@@ -64,12 +64,7 @@ public class MapsActivity extends FragmentActivity {
         }
     }
 
-    /**
-     * This is where we can add markers or lines, add listeners or move the camera. In this case, we
-     * just add a marker near Africa.
-     * <p/>
-     * This should only be called once and when we are sure that {@link #mMap} is not null.
-     */
+
     private void setUpMap() {
         LatLng mLatLng = new LatLng(41.747368, -72.690357);
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(mLatLng, 17));
@@ -78,7 +73,7 @@ public class MapsActivity extends FragmentActivity {
         mMap.addMarker(new MarkerOptions().position(new LatLng(41.749661, -72.689377)).title("Miller Field"));
         mMap.addMarker(new MarkerOptions().position(new LatLng(41.749651, -72.688036)).title("Sheppard Field"));
         mMap.addMarker(new MarkerOptions().position(new LatLng(41.748114, -72.689452)).title("Baseball Field"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.749252, -72.690447)).title("Lacrosse/Soccer Field"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.749252, -72.690447)).title("Lacrosse Field"));
         mMap.addMarker(new MarkerOptions().position(new LatLng(41.746841, -72.688731)).title("Ferris"));
 
         //North part of campus
