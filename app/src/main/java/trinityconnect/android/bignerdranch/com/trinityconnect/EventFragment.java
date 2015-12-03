@@ -8,20 +8,19 @@ import android.support.v4.app.FragmentManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import java.util.Date;
 import java.util.UUID;
+
+import trinityconnect.android.bignerdranch.com.trinityconnect.model.Event;
 
 
 /**
@@ -60,6 +59,7 @@ public class EventFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         UUID eventId = (UUID) getArguments().getSerializable(ARG_EVENT_ID);
+        //query datbsae for specific event
         mEvent = EventLab.get(getActivity()).getEvent(eventId);
 
     }
@@ -68,6 +68,7 @@ public class EventFragment extends Fragment {
     public void onPause() {
         super.onPause();
 
+        //do something with databse here
         EventLab.get(getActivity()).updateEvent(mEvent);
     }
 

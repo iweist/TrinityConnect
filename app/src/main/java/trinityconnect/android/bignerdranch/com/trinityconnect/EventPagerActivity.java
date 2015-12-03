@@ -12,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import java.util.List;
 import java.util.UUID;
 
+import trinityconnect.android.bignerdranch.com.trinityconnect.model.Event;
+
 /**
  * Created by owner on 11/15/2015.
  */

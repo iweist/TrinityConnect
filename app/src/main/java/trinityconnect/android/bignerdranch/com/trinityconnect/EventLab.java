@@ -4,9 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Environment;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -14,6 +12,7 @@ import java.util.UUID;
 import trinityconnect.android.bignerdranch.com.trinityconnect.database.EventBaseHelper;
 import trinityconnect.android.bignerdranch.com.trinityconnect.database.EventCursorWrapper;
 import trinityconnect.android.bignerdranch.com.trinityconnect.database.EventDbSchema;
+import trinityconnect.android.bignerdranch.com.trinityconnect.model.Event;
 
 /**
  * Created by Adam on 11/16/2015.

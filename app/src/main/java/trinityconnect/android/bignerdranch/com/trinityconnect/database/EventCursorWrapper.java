@@ -6,7 +6,7 @@ import android.database.CursorWrapper;
 import java.util.Date;
 import java.util.UUID;
 
-import trinityconnect.android.bignerdranch.com.trinityconnect.Event;
+import trinityconnect.android.bignerdranch.com.trinityconnect.model.Event;
 
 /**
  * Created by Adam on 11/16/2015.
