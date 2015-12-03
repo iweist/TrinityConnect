@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">TrinityConnect</string>
+
+    <string name="new_event">New Event</string>
+    <string name="map">Map</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="event_title_label">Title</string>
+    <string name="event_description_label">Description</string>
+    <string name="event_location_label">Location</string>
+    <string name="event_date_label">Date</string>
+    <string name="event_time_label">Time</string>
+
+    <string name="date_picker_title">Date of event:</string>
+    <string name="time_picker_title">Time of event:</string>
+    <string name="event_title_hint">Enter a title for the event.</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string-array name="loc_array">
+        <item>AD</item>
+        <item>Austin Arts</item>
+        <item>Baseball Field</item>
+        <item>The Bistro</item>
+        <item>Chapel</item>
+        <item>Cinestudio</item>
+        <item>Elton</item>
+        <item>Ferris</item>
+        <item>Funston</item>
+        <item>The Hall</item>
+        <item>Hamlin</item>
+        <item>Jackson</item>
+        <item>Jones</item>
+        <item>Lacrosse Field</item>
+        <item>LSC</item>
+        <item>LSC Quad</item>
+        <item>Main Quad</item>
+        <item>Mather</item>
+        <item>McCook</item>
+        <item>MECC</item>
+        <item>Miller Field</item>
+        <item>North</item>
+        <item>Psi Upsilon</item>
+        <item>Raether Library</item>
+        <item>Sheppard Field</item>
+        <item>Smith</item>
+        <item>Summit East</item>
+        <item>Summit North</item>
+        <item>Summit South</item>
+        <item>Trinity Commons</item>
+        <item>Vernon Social</item>
+    </string-array>
+</resources>
