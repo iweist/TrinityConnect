@@ -46,5 +46,11 @@
         android:padding="4dp"
         tools:text="Time"/>
 
+    <View
+        android:layout_below="@+id/list_item_event_time_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
 
 </RelativeLayout>

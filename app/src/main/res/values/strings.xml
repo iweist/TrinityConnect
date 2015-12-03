@@ -15,6 +15,7 @@
     <string name="time_picker_title">Time of event:</string>
     <string name="event_title_hint">Enter a title for the event.</string>
     <string name="title_activity_maps">Map</string>
+    <string name="blank"><u></u></string>
 
     <string-array name="loc_array">
         <item>AD</item>
