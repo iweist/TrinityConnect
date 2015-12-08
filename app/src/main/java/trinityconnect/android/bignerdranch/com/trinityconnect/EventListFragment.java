@@ -19,6 +19,8 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 
+import com.parse.Parse;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -134,6 +136,11 @@ public class EventListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+
+        Parse.enableLocalDatastore(this.getActivity());
+
+        Parse.initialize(this.getActivity(), "y0QpHJOj4bXvei2I2P4s8GRxQRXGTVInm2asNxv2", "HA0lDl7dwr0fWdzGZm6VE863j8J8ucWp6wH3wjel");
+
 
     }
 
