@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/event_title_label"
+        style="?android:listSeparatorTextViewStyle"
+        />
+
+    <TextView
+        android:id="@+id/event_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/event_description_label"
+        style="?android:listSeparatorTextViewStyle"
+        />
+
+    <TextView
+        android:id="@+id/event_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/event_location_label"
+        style="?android:listSeparatorTextViewStyle"
+        />
+
+    <TextView
+        android:id="@+id/event_loc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/event_date_label"
+        style="?android:listSeparatorTextViewStyle"
+        />
+
+    <TextView
+        android:id="@+id/event_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/event_time_label"
+        style="?android:listSeparatorTextViewStyle"
+        />
+
+
+    <TextView
+        android:id="@+id/event_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/event_rsvp"
+        style="?android:listSeparatorTextViewStyle"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/RSVPs"/>
+
+
+</LinearLayout>
