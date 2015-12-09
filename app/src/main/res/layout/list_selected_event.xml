@@ -75,13 +75,20 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/event_rsvp"
+        android:text="@string/event_rsvp_label"
         style="?android:listSeparatorTextViewStyle"
+        />
+
+    <TextView
+        android:id="@+id/event_rsvp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text = "RSVP To Event!"
         android:id="@+id/RSVPs"/>
 
 

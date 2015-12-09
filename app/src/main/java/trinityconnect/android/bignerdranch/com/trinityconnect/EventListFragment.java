@@ -65,7 +65,7 @@ public class EventListFragment extends Fragment {
 
         @Override
         public void onClick(View v){
-            Intent intent = EventPagerActivity.newIntent(getActivity(), mEvent.getId());
+            Intent intent = EventListPagerActivity.newIntent(getActivity(), mEvent.getId());
             true_id = mEvent.getId();
             startActivity(intent);
 

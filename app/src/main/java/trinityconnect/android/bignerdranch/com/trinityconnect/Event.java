@@ -27,6 +27,7 @@ public class Event {
         mId = id;
         mDate = new Date();
         mTime = new Date();
+        mRSVP = 0;
     }
 
     public UUID getId() {
@@ -53,10 +54,11 @@ public class Event {
         mTime = time;
     }
 
-    public int getRSVP() {
-        return mRSVP;
+    public String getRSVP() {
+        return String.valueOf(mRSVP);
     }
-    public void incrementRSVP(int num) { mRSVP +=1; }
+    public void incrementRSVP() { mRSVP +=1; }
+    public void setRSVP(int rsvp){mRSVP = rsvp;}
 
     public String getLoc() { return mLoc; }
     public void setLoc(String loc) { mLoc = loc; }

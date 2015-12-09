@@ -10,6 +10,7 @@
     <string name="event_location_label">Location</string>
     <string name="event_date_label">Date</string>
     <string name="event_time_label">Time</string>
+    <string name="event_rsvp_label">RSVPS</string>
 
     <string name="date_picker_title">Date of event:</string>
     <string name="time_picker_title">Time of event:</string>

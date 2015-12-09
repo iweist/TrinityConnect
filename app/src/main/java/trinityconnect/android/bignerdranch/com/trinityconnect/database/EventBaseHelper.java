@@ -21,7 +21,8 @@ public class EventBaseHelper extends SQLiteOpenHelper {
                         EventDbSchema.EventTable.Cols.TITLE + ", " +
                         EventDbSchema.EventTable.Cols.DESCRIPT + ", " +
                         EventDbSchema.EventTable.Cols.LOC + ", " +
-                        EventDbSchema.EventTable.Cols.DATE + ") "
+                        EventDbSchema.EventTable.Cols.DATE + ", " +
+                        EventDbSchema.EventTable.Cols.RSVP + ") "
         );
     }
 

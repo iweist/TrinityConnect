@@ -37,13 +37,15 @@ public class InListEventFragment extends Fragment {
     private TextView mDateField;
     private TextView mTimeField;
     private TextView mLocationField;
+    private TextView mRSVPField;
     private Button mRSVPButton;
 
 
-    public static EventFragment newInstance(UUID eventId) {
+
+    public static InListEventFragment newInstance(UUID eventId) {
         Bundle args = new Bundle();
         args.putSerializable(ARG_EVENT_ID, eventId);
-        EventFragment fragment = new EventFragment();
+        InListEventFragment fragment = new InListEventFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -88,12 +90,16 @@ public class InListEventFragment extends Fragment {
         mTimeField = (TextView) v.findViewById(R.id.event_time);
         mTimeField.setText(mEvent.getTime().toString());
 
+        mRSVPField = (TextView) v.findViewById(R.id.event_rsvp);
+        mRSVPField.setText(mEvent.getRSVP());
 
         mRSVPButton = (Button) v.findViewById(R.id.RSVPs);
         mRSVPButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //RSVP function
+                mEvent.incrementRSVP();
+                mRSVPButton.setClickable(false);
+                mRSVPField.setText(mEvent.getRSVP());
             }
 
         });

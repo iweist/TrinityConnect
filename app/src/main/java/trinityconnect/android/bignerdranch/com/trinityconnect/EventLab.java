@@ -88,12 +88,13 @@ public class EventLab {
         values.put(EventDbSchema.EventTable.Cols.DESCRIPT, event.getDescription());
         values.put(EventDbSchema.EventTable.Cols.LOC, event.getLoc());
         values.put(EventDbSchema.EventTable.Cols.DATE, event.getDate().getTime());
+        values.put(EventDbSchema.EventTable.Cols.RSVP, event.getRSVP());
 
         return values;
     }
 
     private EventCursorWrapper queryEvents(String whereClause, String[] whereArgs){
-        Cursor cursor = mDatabase.query(EventDbSchema.EventTable.NAME, null, whereClause, whereArgs, null, null, null);
+        Cursor cursor = mDatabase.query(EventDbSchema.EventTable.NAME, null, whereClause, whereArgs, null, null, null, null);
 
         return new EventCursorWrapper(cursor);
     }

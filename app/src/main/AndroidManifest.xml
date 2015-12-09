@@ -36,6 +36,13 @@
 >
         </activity>
 
+        <activity
+            android:name=".EventListPagerActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".EventListActivity" >
+            >
+        </activity>
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
