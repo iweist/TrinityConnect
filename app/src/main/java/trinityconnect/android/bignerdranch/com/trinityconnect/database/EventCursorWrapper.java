@@ -22,6 +22,7 @@ public class EventCursorWrapper extends CursorWrapper {
         String descript = getString(getColumnIndex(EventDbSchema.EventTable.Cols.DESCRIPT));
         String loc = getString(getColumnIndex(EventDbSchema.EventTable.Cols.LOC));
         long date = getLong(getColumnIndex(EventDbSchema.EventTable.Cols.DATE));
+        long time = getLong(getColumnIndex(EventDbSchema.EventTable.Cols.TIME));
         int rsvps = getInt(getColumnIndex(EventDbSchema.EventTable.Cols.RSVP));
 
         Event event = new Event(UUID.fromString(uuidString));
@@ -29,6 +30,7 @@ public class EventCursorWrapper extends CursorWrapper {
         event.setDescription(descript);
         event.setLoc(loc);
         event.setDate(new Date(date));
+        event.setTime(new Date(time));
         event.setRSVP(rsvps);
 
         return event;

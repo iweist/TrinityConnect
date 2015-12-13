@@ -127,7 +127,7 @@ public class EventFragment extends Fragment {
 
         // Apply the adapter to the spinner
         staticSpinner.setAdapter(staticAdapter);
-
+        staticSpinner.setSelection(0);
         staticSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
@@ -228,7 +228,7 @@ public class EventFragment extends Fragment {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+             public void onNothingSelected(AdapterView<?> parent) {
                 // TODO Auto-generated method stub
             }
         });

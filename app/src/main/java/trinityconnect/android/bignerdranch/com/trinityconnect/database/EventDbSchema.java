@@ -14,6 +14,7 @@ public class EventDbSchema {
             public static final String DESCRIPT = "descript";
             public static final String LOC = "location";
             public static final String DATE = "date";
+            public static final String TIME = "time";
             public static final String RSVP = "RSVP";
 
         }
