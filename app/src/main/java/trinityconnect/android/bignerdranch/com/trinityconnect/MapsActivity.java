@@ -74,29 +74,8 @@ public class MapsActivity extends FragmentActivity {
         LatLng mLatLng = new LatLng(41.747368, -72.690357);
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(mLatLng, 17));
 
-        //Sports Fields
-        Marker millerField = mMap.addMarker(new MarkerOptions().position(new LatLng(41.749661, -72.689377)).title("Miller Field"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.749651, -72.688036)).title("Sheppard Field"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.748114, -72.689452)).title("Baseball Field"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.749252, -72.690447)).title("Lacrosse Field"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.746841, -72.688731)).title("Ferris"));
 
-        //North part of campus
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.748309, -72.691884)).title("Main Quad"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.749221, -72.691801)).title("Chapel"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.751301, -72.691597)).title("Vernon Social"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.751354, -72.690701)).title("North"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.750694, -72.690744)).title("Hamlin"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.750384, -72.691233)).title("The Bistro"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.750919, -72.689447)).title("Psi Upsilon"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.751338, -72.692193)).title("AD"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.751751, -72.692790)).title("The Hall"));
-
-        //Middle part of campus
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745920, -72.692439)).title("Elton"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.746041, -72.691953)).title("Jones"));
-
-        Marker mather = mMap.addMarker(new MarkerOptions().position(new LatLng(41.746652, -72.692580)).title("Mather"));
+        //Set up marker listener
         mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
 
             @Override
@@ -112,24 +91,45 @@ public class MapsActivity extends FragmentActivity {
             }
         });
 
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.747277, -72.690873)).title("Raether Library"));
+        //Sports Fields
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.749661, -72.689377)).title("Miller Field")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.millerfield));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.749651, -72.688036)).title("Sheppard Field")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.sheppardfield));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.748114, -72.689452)).title("Baseball Field")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.baseballfield));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.749252, -72.690447)).title("Lacrosse Field")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.lacrossefield));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.746841, -72.688731)).title("Ferris")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.ferris));
 
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745946, -72.691441)).title("McCook")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.test));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.746600, -72.690635)).title("Austin Arts"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.747334, -72.691777)).title("Cinestudio"));
+        //North part of campus
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.748309, -72.691884)).title("Main Quad")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.mainquad));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.749221, -72.691801)).title("Chapel")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.chapel));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.751301, -72.691597)).title("Vernon Social")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.vernonsocial));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.751354, -72.690701)).title("North")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.north));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.750694, -72.690744)).title("Hamlin")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.hamlin));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.750384, -72.691233)).title("The Bistro")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.bistro));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.750919, -72.689447)).title("Psi Upsilon")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.psiupsilon));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.751338, -72.692193)).title("AD")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.ad));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.751751, -72.692790)).title("The Hall")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.hall));
+
+        //Middle part of campus
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745920, -72.692439)).title("Elton")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.elton));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.746041, -72.691953)).title("Jones")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.jones));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.746652, -72.692580)).title("Mather")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.mather));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.747277, -72.690873)).title("Raether Library")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.raetherlibrary));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745946, -72.691441)).title("McCook")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.mccook));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.746600, -72.690635)).title("Austin Arts")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.austinarts));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.747334, -72.691777)).title("Cinestudio")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.cinestudio));
 
         //South part of campus
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.743288, -72.691475)).title("Trinity Commons"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.744059, -72.691511)).title("Summit East"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.744004, -72.691898)).title("Summit South"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.744384, -72.691993)).title("Summit North"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745065, -72.691094)).title("LSC Quad"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.744430, -72.691063)).title("MECC"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745117, -72.690513)).title("LSC"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.744741, -72.691968)).title("Funston"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745055, -72.691945)).title("Smith"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745355, -72.692274)).title("Wheaton"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745406, -72.691939)).title("Jackson"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.743288, -72.691475)).title("Trinity Commons")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.trinitycommons));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.744059, -72.691511)).title("Summit East")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.summiteast));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.744004, -72.691898)).title("Summit South")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.summitsouth));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.744384, -72.691993)).title("Summit North")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.summitnorth));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745065, -72.691094)).title("LSC Quad")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.lscquad));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.744430, -72.691063)).title("MECC")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.mecc));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745117, -72.690513)).title("LSC")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.lsc));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.744741, -72.691968)).title("Funston")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.funston));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745055, -72.691945)).title("Smith")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.smith));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745355, -72.692274)).title("Wheaton")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.wheaton));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(41.745406, -72.691939)).title("Jackson")).setIcon(BitmapDescriptorFactory.fromResource(R.mipmap.jackson));
 
     }
 }
