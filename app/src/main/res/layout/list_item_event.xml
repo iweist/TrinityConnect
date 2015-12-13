@@ -46,8 +46,16 @@
         android:padding="4dp"
         tools:text="Time"/>
 
-    <View
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/list_item_event_RSVP_text_view"
         android:layout_below="@+id/list_item_event_time_text_view"
+        android:padding="4dp"
+        tools:text="RSVPs"/>
+
+    <View
+        android:layout_below="@+id/list_item_event_RSVP_text_view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"/>

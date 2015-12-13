@@ -21,6 +21,8 @@ import android.widget.TextView;
 
 import com.parse.Parse;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -44,7 +46,7 @@ public class EventListFragment extends Fragment {
         private TextView mTitleTextView;
         private TextView mDescriptTextView;
         private TextView mLocTextView;
-
+        private TextView mRSVPTextView;
         private TextView mDateTextView;
         private TextView mTimeTextView;
         private Event mEvent;
@@ -60,6 +62,7 @@ public class EventListFragment extends Fragment {
             mLocTextView = (TextView) itemView.findViewById(R.id.list_item_event_loc_text_view);
             mDateTextView = (TextView) itemView.findViewById(R.id.list_item_event_date_text_view);
             mTimeTextView = (TextView) itemView.findViewById(R.id.list_item_event_time_text_view);
+            mRSVPTextView = (TextView) itemView.findViewById(R.id.list_item_event_RSVP_text_view);
 
         }
 
@@ -78,9 +81,8 @@ public class EventListFragment extends Fragment {
             mDescriptTextView.setText(mEvent.getDescription());
             mLocTextView.setText(mEvent.getLoc());
             mDateTextView.setText("Date: " + DateFormat.format("dd/MM/yyyy", mEvent.getDate()));
-            mEvent = event;
-            mTitleTextView.setText(mEvent.getTitle());
             mTimeTextView.setText("Time: " + DateFormat.format("hh:mm", mEvent.getTime()));
+            mRSVPTextView.setText("RSVPs: " + mEvent.getRSVP().toString());
 
         }
 
