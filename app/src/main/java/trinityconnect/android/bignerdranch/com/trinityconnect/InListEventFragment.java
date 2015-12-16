@@ -97,7 +97,10 @@ public class InListEventFragment extends Fragment {
         mRSVPButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mEvent.incrementRSVP();
+                int temp = mEvent.getRSVPInt();
+                temp++;
+                mEvent.setRSVP(temp);
+                //mEvent.incrementRSVP();
                 mRSVPButton.setClickable(false);
                 mRSVPField.setText(mEvent.getRSVP());
             }

@@ -82,7 +82,7 @@ public class EventListFragment extends Fragment {
             mLocTextView.setText(mEvent.getLoc());
             mDateTextView.setText("Date: " + DateFormat.format("dd/MM/yyyy", mEvent.getDate()));
             mTimeTextView.setText("Time: " + DateFormat.format("hh:mm", mEvent.getTime()));
-            mRSVPTextView.setText("RSVPs: " + mEvent.getRSVP().toString());
+            mRSVPTextView.setText("RSVPs: " + mEvent.getRSVP());
 
         }
 
@@ -228,6 +228,7 @@ public class EventListFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.menu_item_new_event:
+
                 Event event = new Event();
                 EventLab.get(getActivity()).addEvent(event);
                 Intent intent = EventPagerActivity.newIntent(getActivity(), event.getId());
