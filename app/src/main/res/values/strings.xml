@@ -19,6 +19,7 @@
     <string name="blank"><u></u></string>
 
     <string-array name="loc_array">
+        <item>Choose a Location</item>
         <item>AD</item>
         <item>Austin Arts</item>
         <item>Baseball Field</item>

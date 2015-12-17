@@ -52,7 +52,6 @@ public class EventListFragment extends Fragment {
         private Event mEvent;
         private static final int REQUEST_EVENT = 1;
 
-
         public EventHolder(View itemView){
             super(itemView);
             itemView.setOnClickListener(this);
@@ -124,6 +123,7 @@ public class EventListFragment extends Fragment {
 
         @Override
         public int getItemCount(){
+
             return mEvents.size();
         }
 
@@ -138,12 +138,16 @@ public class EventListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+
+        View view = inflater.inflate(R.layout.fragment_event_list, container, false);
+        mEventRecyclerView = (RecyclerView) view.findViewById(R.id.event_recycler_view);
+        mEventRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        updateUI();
 
         Bundle args = getArguments();
         if(args.getString("trinityconnect.android.bignerdranch.com.trinityconnect.bundlelocation") != null){
@@ -152,16 +156,10 @@ public class EventListFragment extends Fragment {
             Log.i("EventListFragment", location);
         }
 
-        View view = inflater.inflate(R.layout.fragment_event_list, container, false);
-
-        mEventRecyclerView = (RecyclerView) view.findViewById(R.id.event_recycler_view);
-        mEventRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
         if(savedInstanceState != null){
             mSubtitleVisible = savedInstanceState.getBoolean(SAVED_SUBTITLE_VISIBLE);
+
         }
-
-
 
         return view;
     }
@@ -169,7 +167,6 @@ public class EventListFragment extends Fragment {
     @Override
     public void onResume(){
         super.onResume();
-
         updateUI();
     }
 
@@ -179,22 +176,31 @@ public class EventListFragment extends Fragment {
         outState.putBoolean(SAVED_SUBTITLE_VISIBLE, mSubtitleVisible);
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.fragment_event_list, menu);
+
+    }
 
     private void updateUI(){
         EventLab eventLab = EventLab.get(getActivity());
+        eventLab.updateEvent();
         List<Event> Events = eventLab.getEvents();
-        List<Event> tempEventList = new ArrayList<Event>();
-/*
-        if(location != null){
+        List<Event> tempEvents = new ArrayList<>();
 
+        if(filter == 1){
             for(int i = 0; i < Events.size(); i++){
-                if(Events.get(i).getLoc() == location){
-                    tempEventList.add(Events.get(i));
+
+                if( Events.get(i).getLoc().equals(location) ){
+                    tempEvents.add(Events.get(i));
+                    Log.i("In loop", Events.get(i).getLoc());
                 }
             }
-            Events = tempEventList;
+
+            Events=tempEvents;
         }
-*/
+
         if(mAdapter == null) {
             mAdapter = new EventAdapter(Events);
             mEventRecyclerView.setAdapter(mAdapter);
@@ -217,12 +223,6 @@ public class EventListFragment extends Fragment {
 
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.fragment_event_list, menu);
-
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){

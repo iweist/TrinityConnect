@@ -36,7 +36,6 @@ public class EventFragment extends Fragment {
     private Event mEvent;
     private EditText mTitleField;
     private EditText mDescriptionField;
-    private EditText mLocationField;
     private Button mDateButton;
     private Button mTimeButton;
     private Button mCompleteButton;
@@ -68,7 +67,7 @@ public class EventFragment extends Fragment {
     public void onPause() {
         super.onPause();
 
-        EventLab.get(getActivity()).updateEvent(mEvent);
+        EventLab.get(getActivity()).updateEvent();
     }
 
     @Override
@@ -130,100 +129,100 @@ public class EventFragment extends Fragment {
         staticSpinner.setSelection(0);
         staticSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        mEvent.setLoc("AD");
                         break;
                     case 1:
-                        mEvent.setLoc("Austin Arts");
+                        mEvent.setLoc("AD");
                         break;
                     case 2:
-                        mEvent.setLoc("Baseball Field");
+                        mEvent.setLoc("Austin Arts");
                         break;
                     case 3:
-                        mEvent.setLoc("The Bistro");
+                        mEvent.setLoc("Baseball Field");
                         break;
                     case 4:
-                        mEvent.setLoc("Chapel");
+                        mEvent.setLoc("The Bistro");
                         break;
                     case 5:
-                        mEvent.setLoc("Cinestudio");
+                        mEvent.setLoc("Chapel");
                         break;
                     case 6:
-                        mEvent.setLoc("Elton");
+                        mEvent.setLoc("Cinestudio");
                         break;
                     case 7:
-                        mEvent.setLoc("Ferris");
+                        mEvent.setLoc("Elton");
                         break;
                     case 8:
-                        mEvent.setLoc("Funston");
+                        mEvent.setLoc("Ferris");
                         break;
                     case 9:
-                        mEvent.setLoc("The Hall");
+                        mEvent.setLoc("Funston");
                         break;
                     case 10:
-                        mEvent.setLoc("Hamlin");
+                        mEvent.setLoc("The Hall");
                         break;
                     case 11:
-                        mEvent.setLoc("Jackson");
+                        mEvent.setLoc("Hamlin");
                         break;
                     case 12:
-                        mEvent.setLoc("Jones");
+                        mEvent.setLoc("Jackson");
                         break;
                     case 13:
-                        mEvent.setLoc("Lacrosse Field");
+                        mEvent.setLoc("Jones");
                         break;
                     case 14:
-                        mEvent.setLoc("LSC");
+                        mEvent.setLoc("Lacrosse Field");
                         break;
                     case 15:
-                        mEvent.setLoc("LSC Quad");
+                        mEvent.setLoc("LSC");
                         break;
                     case 16:
-                        mEvent.setLoc("Main Quad");
+                        mEvent.setLoc("LSC Quad");
                         break;
                     case 17:
-                        mEvent.setLoc("Mather");
+                        mEvent.setLoc("Main Quad");
                         break;
                     case 18:
-                        mEvent.setLoc("McCook");
+                        mEvent.setLoc("Mather");
                         break;
                     case 19:
-                        mEvent.setLoc("MECC");
+                        mEvent.setLoc("McCook");
                         break;
                     case 20:
-                        mEvent.setLoc("Miller Field");
+                        mEvent.setLoc("MECC");
                         break;
                     case 21:
-                        mEvent.setLoc("North");
+                        mEvent.setLoc("Miller Field");
                         break;
                     case 22:
-                        mEvent.setLoc("Psi Upsilon");
+                        mEvent.setLoc("North");
                         break;
                     case 23:
-                        mEvent.setLoc("Raether Library");
+                        mEvent.setLoc("Psi Upsilon");
                         break;
                     case 24:
-                        mEvent.setLoc("Sheppard Field");
+                        mEvent.setLoc("Raether Library");
                         break;
                     case 25:
-                        mEvent.setLoc("Smith");
+                        mEvent.setLoc("Sheppard Field");
                         break;
                     case 26:
-                        mEvent.setLoc("Summit East");
+                        mEvent.setLoc("Smith");
                         break;
                     case 27:
-                        mEvent.setLoc("Summit North");
+                        mEvent.setLoc("Summit East");
                         break;
                     case 28:
-                        mEvent.setLoc("Summit South");
+                        mEvent.setLoc("Summit North");
                         break;
                     case 29:
+                        mEvent.setLoc("Summit South");
+                        break;
+                    case 30:
                         mEvent.setLoc("Vernon Social");
                         break;
-
                 }
             }
 
@@ -272,16 +271,6 @@ public class EventFragment extends Fragment {
 
         });
 
-        /*
-        mDeleteButton = (Button) v.findViewById(R.id.delete_event);
-        mDeleteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().finish();
-            }
-
-        });
-        */
 
         return v;
     }

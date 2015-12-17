@@ -6,6 +6,8 @@ import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +30,6 @@ public class EventLab {
     public void addEvent(Event c){
 
         mEvents.add(c);
-
     }
 
     public static EventLab get(Context context){
@@ -55,20 +56,27 @@ public class EventLab {
     }
 
 
-    public void updateEvent(Event event){
+    public void updateEvent(){
        ParseQuery<ParseObject> query = ParseQuery.getQuery("Event");
 
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
-            public void done(List<ParseObject> objects, ParseException e) {
-                if(e == null){
+            public void done(List<ParseObject> eventList, ParseException e) {
+                if (e == null) {
+
                     mEvents.clear();
 
-                    for(ParseObject event : objects){
-                        mEvents.add((Event)event );
+                    for (ParseObject event : eventList) {
+
+                        mEvents.add((Event) event);
                     }
+
+
+                } else {
+                    Log.d("Post retrieval", "Error: " + e.getMessage());
                 }
             }
+
         });
 
     }

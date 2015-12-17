@@ -15,16 +15,11 @@ public class ParseApplication extends Application{
         super.onCreate();
 
         // Add your initialization code here
+        Parse.enableLocalDatastore(this);
         Parse.initialize(this, "y0QpHJOj4bXvei2I2P4s8GRxQRXGTVInm2asNxv2", "HA0lDl7dwr0fWdzGZm6VE863j8J8ucWp6wH3wjel");
 
-        ParseUser.enableAutomaticUser();
-        ParseACL defaultACL = new ParseACL();
         ParseObject.registerSubclass(Event.class);
 
-        //Makes the default private
-        defaultACL.setPublicReadAccess(false);
-
-        ParseACL.setDefaultACL(defaultACL, true);
     }
 
 }
