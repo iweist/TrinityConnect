@@ -42,7 +42,7 @@ public class TimePickerFragment extends android.support.v4.app.DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
-        mTimer = (Date) getArguments().getSerializable(EXTRA_TIME);
+        mTimer = new Date();
 
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(mTimer);

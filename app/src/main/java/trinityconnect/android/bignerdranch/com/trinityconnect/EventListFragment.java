@@ -1,6 +1,7 @@
 package trinityconnect.android.bignerdranch.com.trinityconnect;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -63,12 +64,21 @@ public class EventListFragment extends Fragment {
             mTimeTextView = (TextView) itemView.findViewById(R.id.list_item_event_time_text_view);
             mRSVPTextView = (TextView) itemView.findViewById(R.id.list_item_event_RSVP_text_view);
 
+            mTitleTextView.setTextColor(Color.BLUE);
+            mTitleTextView.setTextSize(22);
+            mTimeTextView.setTextSize(22);
+            mRSVPTextView.setTextSize(22);
+            mLocTextView.setTextSize(22);
+            mDateTextView.setTextSize(22);
+            mDescriptTextView.setTextSize(22);
+
+
         }
 
         @Override
         public void onClick(View v){
             Intent intent = EventListPagerActivity.newIntent(getActivity(), mEvent.getId());
-            true_id = mEvent.getId();
+            //true_id = mEvent.getId();
             startActivity(intent);
 
         }
@@ -191,25 +201,25 @@ public class EventListFragment extends Fragment {
                 List<Event> Events = eventLab.getEvents();
                 List<Event> tempEvents = new ArrayList<>();
 
-                if(filter == 1){
-                    for(int i = 0; i < Events.size(); i++){
+                if (filter == 1) {
+                    for (int i = 0; i < Events.size(); i++) {
 
-                        if( Events.get(i).getLoc().equals(location) ){
+                        if (Events.get(i).getLoc().equals(location)) {
                             tempEvents.add(Events.get(i));
                             Log.i("In loop", Events.get(i).getLoc());
                         }
                     }
 
-                    Events=tempEvents;
+                    Events = tempEvents;
                 }
 
-                if(mAdapter == null) {
+                if (mAdapter == null) {
                     mAdapter = new EventAdapter(Events);
                     mEventRecyclerView.setAdapter(mAdapter);
                     delChange = true;
                 } else {
-                    for(int i = 0; i < Events.size(); i++){
-                        if(Events.get(i).getId() == true_id) {
+                    for (int i = 0; i < Events.size(); i++) {
+                        if (Events.get(i).getId() == true_id) {
                             index = i;
                             delChange = false;
                         }
@@ -220,7 +230,7 @@ public class EventListFragment extends Fragment {
                 }
 
 
-                if(delChange == null)
+                if (delChange == null)
                     mAdapter.notifyDataSetChanged();
             }
         });

@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/list_item_event_descript_text_view"
         android:padding="4dp"
-        tools:text="Description "/>
+        tools:text="Location "/>
 
     <TextView
         android:id="@+id/list_item_event_date_text_view"

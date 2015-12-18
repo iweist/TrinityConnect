@@ -295,11 +295,11 @@ public class EventFragment extends Fragment {
     }
 
     private void updateDate() {
-        mDateButton.setText(DateFormat.format("dd/MM/yyyy", mEvent.getDate()));
+        mDateButton.setText("Pick A Date!");
     }
 
     private void updateTime() {
-        mTimeButton.setText(DateFormat.format("hh:mm:00 a", mEvent.getTime()));
+        mTimeButton.setText("Pick A Time!");
 
     }
 }

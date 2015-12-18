@@ -25,8 +25,7 @@ public class Event extends ParseObject{
 
     public Event() {
         mId = UUID.randomUUID();
-        setDate(new Date());
-        setTime(new Date());
+
         setRSVP(0);
     }
 
@@ -93,6 +92,7 @@ public class Event extends ParseObject{
 
         put("RSVPs", rsvp);
         saveInBackground();
+
     }
 
     public String getLoc() {
