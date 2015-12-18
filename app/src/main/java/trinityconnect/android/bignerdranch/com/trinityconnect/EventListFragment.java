@@ -184,42 +184,47 @@ public class EventListFragment extends Fragment {
     }
 
     private void updateUI(){
-        EventLab eventLab = EventLab.get(getActivity());
-        eventLab.updateEvent();
-        List<Event> Events = eventLab.getEvents();
-        List<Event> tempEvents = new ArrayList<>();
+        final EventLab eventLab = EventLab.get(getActivity());
+        eventLab.updateEvent(new AfterCallBack() {
+            @Override
+            public void done(List<Event> events) {
+                List<Event> Events = eventLab.getEvents();
+                List<Event> tempEvents = new ArrayList<>();
 
-        if(filter == 1){
-            for(int i = 0; i < Events.size(); i++){
+                if(filter == 1){
+                    for(int i = 0; i < Events.size(); i++){
 
-                if( Events.get(i).getLoc().equals(location) ){
-                    tempEvents.add(Events.get(i));
-                    Log.i("In loop", Events.get(i).getLoc());
+                        if( Events.get(i).getLoc().equals(location) ){
+                            tempEvents.add(Events.get(i));
+                            Log.i("In loop", Events.get(i).getLoc());
+                        }
+                    }
+
+                    Events=tempEvents;
                 }
-            }
 
-            Events=tempEvents;
-        }
+                if(mAdapter == null) {
+                    mAdapter = new EventAdapter(Events);
+                    mEventRecyclerView.setAdapter(mAdapter);
+                    delChange = true;
+                } else {
+                    for(int i = 0; i < Events.size(); i++){
+                        if(Events.get(i).getId() == true_id) {
+                            index = i;
+                            delChange = false;
+                        }
+                    }
+                    mAdapter.setEvents(Events);
+                    mAdapter.notifyItemChanged(index);
 
-        if(mAdapter == null) {
-            mAdapter = new EventAdapter(Events);
-            mEventRecyclerView.setAdapter(mAdapter);
-            delChange = true;
-        } else {
-            for(int i = 0; i < Events.size(); i++){
-                if(Events.get(i).getId() == true_id) {
-                    index = i;
-                    delChange = false;
                 }
+
+
+                if(delChange == null)
+                    mAdapter.notifyDataSetChanged();
             }
-            mAdapter.setEvents(Events);
-            mAdapter.notifyItemChanged(index);
+        });
 
-        }
-
-
-        if(delChange == null)
-            mAdapter.notifyDataSetChanged();
 
     }
 

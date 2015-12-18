@@ -67,7 +67,7 @@ public class InListEventFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        EventLab.get(getActivity()).updateEvent();
+        EventLab.get(getActivity()).updateEvent(null);
     }
 
     @Override

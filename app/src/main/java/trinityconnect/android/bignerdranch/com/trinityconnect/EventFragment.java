@@ -67,7 +67,7 @@ public class EventFragment extends Fragment {
     public void onPause() {
         super.onPause();
 
-        EventLab.get(getActivity()).updateEvent();
+        EventLab.get(getActivity()).updateEvent(null);
     }
 
     @Override

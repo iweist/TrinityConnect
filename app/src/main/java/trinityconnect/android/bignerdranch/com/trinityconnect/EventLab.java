@@ -56,7 +56,7 @@ public class EventLab {
     }
 
 
-    public void updateEvent(){
+    public void updateEvent(final AfterCallBack callBack){
        ParseQuery<ParseObject> query = ParseQuery.getQuery("Event");
 
         query.findInBackground(new FindCallback<ParseObject>() {
@@ -69,6 +69,11 @@ public class EventLab {
                     for (ParseObject event : eventList) {
 
                         mEvents.add((Event) event);
+                    }
+
+                    if(callBack != null){
+
+                        callBack.done(mEvents);
                     }
 
 
