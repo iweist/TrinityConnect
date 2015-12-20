@@ -75,6 +75,7 @@ public class InListEventFragment extends Fragment {
         View v = inflater.inflate(R.layout.list_selected_event, container, false);
 
 
+
         mTitleField = (TextView) v.findViewById(R.id.event_title);
         mTitleField.setText(mEvent.getTitle());
 
@@ -93,6 +94,7 @@ public class InListEventFragment extends Fragment {
         mRSVPField = (TextView) v.findViewById(R.id.event_rsvp);
         mRSVPField.setText(mEvent.getRSVP());
 
+
         mRSVPButton = (Button) v.findViewById(R.id.RSVPs);
         mRSVPButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,6 +108,15 @@ public class InListEventFragment extends Fragment {
             }
 
         });
+
+
+        mDateField.setTextSize(22);
+        mDescriptionField.setTextSize(22);
+        mLocationField.setTextSize(22);
+        mRSVPField.setTextSize(22);
+        mRSVPButton.setTextSize(22);
+        mTimeField.setTextSize(22);
+        mTitleField.setTextSize(22);
 
         return v;
     }

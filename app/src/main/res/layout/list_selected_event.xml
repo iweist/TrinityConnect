@@ -10,25 +10,29 @@
         android:layout_height="wrap_content"
         android:text="@string/event_title_label"
         style="?android:listSeparatorTextViewStyle"
-        />
+        android:textSize="22dp"
+        android:textColor="#0041C2"/>
 
     <TextView
         android:id="@+id/event_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:paddingLeft="7dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/event_description_label"
         style="?android:listSeparatorTextViewStyle"
-        />
+        android:textSize="22dp"
+        android:textColor="#0041C2"
+        android:paddingTop="20dp"/>
 
     <TextView
         android:id="@+id/event_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="7dp"
         />
 
     <TextView
@@ -36,12 +40,16 @@
         android:layout_height="wrap_content"
         android:text="@string/event_location_label"
         style="?android:listSeparatorTextViewStyle"
+        android:textSize="22dp"
+        android:textColor="#0041C2"
+        android:paddingTop="20dp"
         />
 
     <TextView
         android:id="@+id/event_loc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="7dp"
         />
 
 
@@ -50,12 +58,16 @@
         android:layout_height="wrap_content"
         android:text="@string/event_date_label"
         style="?android:listSeparatorTextViewStyle"
+        android:textSize="22dp"
+        android:textColor="#0041C2"
+        android:paddingTop="20dp"
         />
 
     <TextView
         android:id="@+id/event_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="7dp"
         />
 
     <TextView
@@ -63,6 +75,9 @@
         android:layout_height="wrap_content"
         android:text="@string/event_time_label"
         style="?android:listSeparatorTextViewStyle"
+        android:textSize="22dp"
+        android:textColor="#0041C2"
+        android:paddingTop="20dp"
         />
 
 
@@ -70,6 +85,7 @@
         android:id="@+id/event_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="7dp"
         />
 
     <TextView
@@ -77,19 +93,25 @@
         android:layout_height="wrap_content"
         android:text="@string/event_rsvp_label"
         style="?android:listSeparatorTextViewStyle"
+        android:textSize="22dp"
+        android:textColor="#0041C2"
+        android:paddingTop="20dp"
         />
 
     <TextView
         android:id="@+id/event_rsvp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="7dp"
         />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text = "RSVP To Event!"
-        android:id="@+id/RSVPs"/>
+        android:id="@+id/RSVPs"
+        android:paddingTop="20dp"
+        android:paddingLeft="7dp"/>
 
 
 </LinearLayout>

@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text="@string/event_title_label"
         style="?android:listSeparatorTextViewStyle"
-        />
+        android:textSize="22dp"/>
 
     <EditText
         android:id="@+id/event_title"
@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:text="@string/event_description_label"
         style="?android:listSeparatorTextViewStyle"
+        android:textSize="22dp"
         />
 
     <EditText
@@ -36,6 +37,7 @@
         android:layout_height="wrap_content"
         android:text="@string/event_location_label"
         style="?android:listSeparatorTextViewStyle"
+        android:textSize="22dp"
         />
 
     <Spinner
@@ -50,6 +52,7 @@
         android:layout_height="wrap_content"
         android:text="@string/event_date_label"
         style="?android:listSeparatorTextViewStyle"
+        android:textSize="22dp"
         />
 
     <Button
@@ -63,8 +66,16 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/event_date_picked"
+        style="?android:listSeparatorTextViewStyle"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/event_time_label"
         style="?android:listSeparatorTextViewStyle"
+        android:textSize="22dp"
         />
 
     <Button
@@ -73,6 +84,13 @@
         android:id="@+id/event_time"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/event_time_picked"
+        style="?android:listSeparatorTextViewStyle"
         />
 
 

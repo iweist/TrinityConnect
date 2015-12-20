@@ -38,6 +38,8 @@ public class EventFragment extends Fragment {
     private EditText mDescriptionField;
     private Button mDateButton;
     private Button mTimeButton;
+    private TextView mDateText;
+    private TextView mTimeText;
     private Button mCompleteButton;
 
 
@@ -74,6 +76,10 @@ public class EventFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_event, container, false);
 
+        mDateText= (TextView) v.findViewById(R.id.event_date_picked);
+        mDateText.setText("");
+        mTimeText= (TextView) v.findViewById(R.id.event_time_picked);
+        mTimeText.setText("");
 
         mTitleField = (EditText) v.findViewById(R.id.event_title);
         mTitleField.setText(mEvent.getTitle());
@@ -227,7 +233,7 @@ public class EventFragment extends Fragment {
             }
 
             @Override
-             public void onNothingSelected(AdapterView<?> parent) {
+            public void onNothingSelected(AdapterView<?> parent) {
                 // TODO Auto-generated method stub
             }
         });
@@ -272,6 +278,14 @@ public class EventFragment extends Fragment {
         });
 
 
+        mTimeText.setTextSize(22);
+        mDateText.setTextSize(22);
+        mDescriptionField.setTextSize(22);
+        mCompleteButton.setTextSize(15);
+        mDateButton.setTextSize(15);
+        mTimeButton.setTextSize(15);
+        mTitleField.setTextSize(22);
+
         return v;
     }
 
@@ -285,10 +299,13 @@ public class EventFragment extends Fragment {
         if (requestCode == REQUEST_DATE) {
             Date date = (Date) data.getSerializableExtra(DatePickerFragment.EXTRA_DATE);
             mEvent.setDate(date);
+            mDateText.setText(DateFormat.format("MM/dd/yyyy", date));
             updateDate();
         } else if (requestCode == REQUEST_TIME) {
             Date date = (Date) data.getSerializableExtra(TimePickerFragment.EXTRA_TIME);
             mEvent.setTime(date);
+
+            mTimeText.setText(DateFormat.format("hh:mm a", date));
             updateTime();
         }
 

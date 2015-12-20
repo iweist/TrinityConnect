@@ -29,6 +29,18 @@ public class Event extends ParseObject{
             setRSVP(0);
         }
 
+        if(getDate("Date") == null) {
+            setDate(new Date());
+        }
+
+        if(getDate("Time") == null) {
+            setTime(new Date());
+        }
+
+        if(getString("Location") == null){
+            setLoc("Not Specified");
+        }
+
     }
 
     public UUID getId() {
