@@ -25,8 +25,10 @@ public class Event extends ParseObject{
 
     public Event() {
         mId = UUID.randomUUID();
+        if(getNumber("RSVPs") == null) {
+            setRSVP(0);
+        }
 
-        setRSVP(0);
     }
 
     public UUID getId() {
