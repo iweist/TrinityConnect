@@ -2,11 +2,11 @@
 
 Description:  
 
-Trinity Connect is a mobile applciation made for CPSC415: Mobile Computing during the Fall semester of 2015.  
+Trinity Connect is a mobile application made for CPSC415: Mobile Computing during the Fall semester of 2015.  
 Trinity Connect is designed to display basic android design principles and provide students with practice using version control
 systems and developing a product in a team.  Trinity Connect is a database-run application designed to provide an open platform
 for Trinity students, faculty, and staff to host and promote events on campus.  This application was made for purely academic 
-purposes and is being released under the MIT lisence for Open Source Software.
+purposes and is being released under the MIT license for Open Source Software.
 
 Contributors:
 
