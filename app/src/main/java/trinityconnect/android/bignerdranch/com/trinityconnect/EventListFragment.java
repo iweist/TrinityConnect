@@ -253,6 +253,8 @@ public class EventListFragment extends Fragment {
                 Intent intent1 = MapsActivity.newIntent(getActivity());
                 startActivity(intent1);
                 return true;
+            case R.id.menu_item_refresh:
+                updateUI();
             default:
                 return super.onOptionsItemSelected(item);
         }
