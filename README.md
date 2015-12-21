@@ -14,7 +14,11 @@ This applciation was developed by Ian Weist and Adam Krog, computer science stud
 
 Sources:
 
-The main body of this application is based off of an application created in the Android programming book, 
+Parts of the body of this application are based off of an application created in the Android programming book, 
 Android Programming: The Big Nerd Ranch Guide (2nd Edition).  Along with this help and inspriation for the features of the 
 application were also sourced from classmates and both of our TAs, Adam Shaw and Yisheng Cai.  Help with the Google Maps API
 was given by Yisheng Cai and help with the Parse Database API was given by Adam Shaw.
+
+Parse API: https://parse.com/docs
+
+Google Maps API: https://developers.google.com/maps/?hl=en
