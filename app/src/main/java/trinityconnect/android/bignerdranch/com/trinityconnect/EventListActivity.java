@@ -6,9 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
 
-/**
- * Created by Adam on 11/16/2015.
- */
 public class EventListActivity extends SingleFragmentActivity {
 
     @Override
@@ -23,6 +20,7 @@ public class EventListActivity extends SingleFragmentActivity {
         Intent intent = getIntent();
         Bundle args = new Bundle();
 
+        //Used when filtering for certain events by location
         if(intent.getStringExtra("trinityconnect.android.bignerdranch.com.trinityconnect.LOCATION") != null){
             String location = intent.getStringExtra("trinityconnect.android.bignerdranch.com.trinityconnect.LOCATION");
             args.putString(LOC_TAG, location);

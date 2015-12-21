@@ -4,10 +4,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,21 +14,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.TextView;
-
-
-import com.parse.Parse;
-
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Created by owner on 11/15/2015.
- */
+
 public class EventListFragment extends Fragment {
 
     private static  final String SAVED_SUBTITLE_VISIBLE = "subtitle";
@@ -57,6 +46,7 @@ public class EventListFragment extends Fragment {
             super(itemView);
             itemView.setOnClickListener(this);
 
+            //Set objects from layout to variables
             mTitleTextView = (TextView) itemView.findViewById(R.id.list_item_event_title_text_view);
             mDescriptTextView = (TextView) itemView.findViewById(R.id.list_item_event_descript_text_view);
             mLocTextView = (TextView) itemView.findViewById(R.id.list_item_event_loc_text_view);
@@ -64,6 +54,7 @@ public class EventListFragment extends Fragment {
             mTimeTextView = (TextView) itemView.findViewById(R.id.list_item_event_time_text_view);
             mRSVPTextView = (TextView) itemView.findViewById(R.id.list_item_event_RSVP_text_view);
 
+            //Set text settings
             mTitleTextView.setTextColor(Color.BLUE);
             mTitleTextView.setTextSize(22);
             mTimeTextView.setTextSize(22);
@@ -77,20 +68,19 @@ public class EventListFragment extends Fragment {
 
         @Override
         public void onClick(View v){
-            Intent intent = EventListPagerActivity.newIntent(getActivity(), mEvent.getId());
-            //true_id = mEvent.getId();
-            startActivity(intent);
 
+            Intent intent = EventListPagerActivity.newIntent(getActivity(), mEvent.getId());
+            startActivity(intent);
         }
 
-
+        //Used to place events that will be displayed
         public void bindEvent(Event event){
             mEvent = event;
             mTitleTextView.setText(mEvent.getTitle());
             mDescriptTextView.setText(mEvent.getDescription());
             mLocTextView.setText(mEvent.getLoc());
             mDateTextView.setText("Date: " + DateFormat.format("MM/dd/yyyy", mEvent.getDate()));
-            mTimeTextView.setText("Time: " + DateFormat.format("hh:mm", mEvent.getTime()));
+            mTimeTextView.setText("Time: " + DateFormat.format("hh:mm a", mEvent.getTime()));
             mRSVPTextView.setText("RSVPs: " + mEvent.getRSVP());
 
         }
@@ -104,6 +94,7 @@ public class EventListFragment extends Fragment {
             mEvents = Events;
             List<Event> tempEvents = new ArrayList<>();
 
+            //Filters events if a location was chosen on the map
             if(filter == 1){
                 for(int i = 0; i < mEvents.size(); i++){
 
@@ -159,6 +150,8 @@ public class EventListFragment extends Fragment {
 
         updateUI();
 
+        //This is a check to see if the EventListFragment is being started from google maps,
+        // in which it will turn a switch on to filter the events
         Bundle args = getArguments();
         if(args.getString("trinityconnect.android.bignerdranch.com.trinityconnect.bundlelocation") != null){
             location = args.getString("trinityconnect.android.bignerdranch.com.trinityconnect.bundlelocation");
@@ -201,6 +194,7 @@ public class EventListFragment extends Fragment {
                 List<Event> Events = eventLab.getEvents();
                 List<Event> tempEvents = new ArrayList<>();
 
+                //If the filter is on, filter the events based on the location
                 if (filter == 1) {
                     for (int i = 0; i < Events.size(); i++) {
 
@@ -250,12 +244,15 @@ public class EventListFragment extends Fragment {
                 startActivity(intent);
                 return true;
             case R.id.menu_item_my_events:
+
                 Intent intent1 = MapsActivity.newIntent(getActivity());
                 startActivity(intent1);
                 return true;
             case R.id.menu_item_refresh:
+
                 updateUI();
             default:
+
                 return super.onOptionsItemSelected(item);
         }
     }

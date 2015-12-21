@@ -8,21 +8,13 @@ import java.sql.Time;
 import java.util.Date;
 import java.util.UUID;
 
-/**
- * Created by owner on 11/15/2015.
- */
+
 @ParseClassName("Event")
 public class Event extends ParseObject{
 
     private UUID mId;
-    private String mTitle;
-    private String mDescription;
-    private String mLoc;
-    private Date mDate;
-    private Date mTime;
-    private int mRSVP;
 
-
+    //Sets parameters to default setting encase of user error
     public Event() {
         mId = UUID.randomUUID();
         if(getNumber("RSVPs") == null) {
@@ -43,11 +35,15 @@ public class Event extends ParseObject{
 
     }
 
+
+    //Below are get and set methods of all parameters in Event
+
     public UUID getId() {
 
         return mId;
     }
 
+    //Title methods
     public String getTitle() {
 
         return getString("Title");
@@ -58,6 +54,7 @@ public class Event extends ParseObject{
         saveInBackground();
     }
 
+    //Description methods
     public String getDescription() {
 
         return getString("Description");
@@ -68,6 +65,7 @@ public class Event extends ParseObject{
         saveInBackground();
     }
 
+    //Date methods
     public Date getDate() {
 
         return getDate("Date");
@@ -78,6 +76,7 @@ public class Event extends ParseObject{
         saveInBackground();
     }
 
+    //Time methods
     public Date getTime() {
 
         return getDate("Time");
@@ -88,6 +87,7 @@ public class Event extends ParseObject{
         saveInBackground();
     }
 
+    //RSVP methods
     public String getRSVP() {
 
         return getNumber("RSVPs").toString();
@@ -109,6 +109,7 @@ public class Event extends ParseObject{
 
     }
 
+    //Location methods
     public String getLoc() {
 
         return getString("Location");

@@ -86,10 +86,10 @@ public class InListEventFragment extends Fragment {
         mLocationField.setText(mEvent.getLoc());
 
         mDateField = (TextView) v.findViewById(R.id.event_date);
-        mDateField.setText(mEvent.getDate().toString());
+        mDateField.setText(DateFormat.format("MM/dd/yyyy", mEvent.getDate()));
 
         mTimeField = (TextView) v.findViewById(R.id.event_time);
-        mTimeField.setText(mEvent.getTime().toString());
+        mTimeField.setText(DateFormat.format("hh:mm a", mEvent.getTime()));
 
         mRSVPField = (TextView) v.findViewById(R.id.event_rsvp);
         mRSVPField.setText(mEvent.getRSVP());

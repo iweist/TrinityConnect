@@ -28,11 +28,16 @@ import java.util.UUID;
  * Created by owner on 11/15/2015.
  */
 public class EventFragment extends Fragment {
+
     private static final String ARG_EVENT_ID = "event_id";
     private static final String DIALOG_DATE = "DialogDate";
     private static final String DIALOG_TIME = "DialogTime";
+
+    //Request codes
     private static final int REQUEST_DATE = 0;
     private static final int REQUEST_TIME = 1;
+
+    //Variables for the layout
     private Event mEvent;
     private EditText mTitleField;
     private EditText mDescriptionField;
@@ -76,11 +81,13 @@ public class EventFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_event, container, false);
 
+        //--Sets date and time under the date and time pickers to be blank until a time and date are picked
         mDateText= (TextView) v.findViewById(R.id.event_date_picked);
         mDateText.setText("");
         mTimeText= (TextView) v.findViewById(R.id.event_time_picked);
         mTimeText.setText("");
 
+        //--For creating a title
         mTitleField = (EditText) v.findViewById(R.id.event_title);
         mTitleField.setText(mEvent.getTitle());
         mTitleField.addTextChangedListener(new TextWatcher() {
@@ -100,6 +107,8 @@ public class EventFragment extends Fragment {
             }
         });
 
+
+        //--For creating a description
         mDescriptionField = (EditText) v.findViewById(R.id.event_description);
         mDescriptionField.setText(mEvent.getDescription());
         mDescriptionField.addTextChangedListener(new TextWatcher() {
@@ -119,6 +128,8 @@ public class EventFragment extends Fragment {
             }
         });
 
+
+        //--For choosing a location using a spinner
         Spinner staticSpinner = (Spinner) v.findViewById(R.id.static_spinner);
 
         // Create an ArrayAdapter using the string array and a default spinner
@@ -239,6 +250,7 @@ public class EventFragment extends Fragment {
         });
 
 
+        //--For choosing an event
         mDateButton = (Button) v.findViewById(R.id.event_date);
         updateDate();
         mDateButton.setOnClickListener(new View.OnClickListener() {
@@ -253,6 +265,7 @@ public class EventFragment extends Fragment {
         });
 
 
+        //--For choosing a time
         mTimeButton = (Button) v.findViewById(R.id.event_time);
         updateTime();
         mTimeButton.setOnClickListener(new View.OnClickListener() {
@@ -267,7 +280,7 @@ public class EventFragment extends Fragment {
         });
 
 
-
+        //--Button to complete the creation of an event
         mCompleteButton = (Button) v.findViewById(R.id.complete_event);
         mCompleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -277,7 +290,7 @@ public class EventFragment extends Fragment {
 
         });
 
-
+        //--Sets the text size for any labels and text fields
         mTimeText.setTextSize(22);
         mDateText.setTextSize(22);
         mDescriptionField.setTextSize(22);
@@ -296,12 +309,15 @@ public class EventFragment extends Fragment {
             return;
         }
 
+        //Sets date if the "Choose date" button is selected
         if (requestCode == REQUEST_DATE) {
             Date date = (Date) data.getSerializableExtra(DatePickerFragment.EXTRA_DATE);
             mEvent.setDate(date);
             mDateText.setText(DateFormat.format("MM/dd/yyyy", date));
             updateDate();
-        } else if (requestCode == REQUEST_TIME) {
+        }
+        //Sets time if the "Choose time" button is selected
+        else if (requestCode == REQUEST_TIME) {
             Date date = (Date) data.getSerializableExtra(TimePickerFragment.EXTRA_TIME);
             mEvent.setTime(date);
 
@@ -315,9 +331,6 @@ public class EventFragment extends Fragment {
         mDateButton.setText("Pick A Date!");
     }
 
-    private void updateTime() {
-        mTimeButton.setText("Pick A Time!");
-
-    }
+    private void updateTime() { mTimeButton.setText("Pick A Time!"); }
 }
 

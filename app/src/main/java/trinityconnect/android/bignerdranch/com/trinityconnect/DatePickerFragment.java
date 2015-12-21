@@ -14,9 +14,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-/**
- * Created by Adam on 11/16/2015.
- */
 public class DatePickerFragment extends android.support.v4.app.DialogFragment {
 
     public static final String EXTRA_DATE = "trinityconnect.android.bignerdranch.com.date";
@@ -60,6 +57,7 @@ public class DatePickerFragment extends android.support.v4.app.DialogFragment {
 
     }
 
+    //Sends the date picked
     private void sendResult(int resultCode, Date date){
         if(getTargetFragment() == null){
             return;

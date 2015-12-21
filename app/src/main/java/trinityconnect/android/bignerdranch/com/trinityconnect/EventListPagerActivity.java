@@ -12,9 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Created by Adam on 12/9/2015.
- */
+
 public class EventListPagerActivity extends AppCompatActivity {
 
     private ViewPager mViewPager;
