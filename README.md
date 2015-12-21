@@ -22,3 +22,7 @@ was given by Yisheng Cai and help with the Parse Database API was given by Adam 
 Parse API: https://parse.com/docs
 
 Google Maps API: https://developers.google.com/maps/?hl=en
+
+Link to full project write-up:
+
+https://sites.google.com/site/ianweist415/trinity-connect---final
